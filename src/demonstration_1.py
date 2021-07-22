@@ -23,4 +23,23 @@ class TreeNode:
 
 def inorder_traversal(root):
     # Your code here
+    # o an in order dft
+    s = []
+    result = []
+    while True:
+      while root:
+        s.append(root)
+        root = root.left
+      if len(s) == 0:
+        return result
+      node = s.pop()
+      result.append(node.val)
+      
+      root = node.right
 
+n = TreeNode(3)
+n.right = TreeNode(1)
+n.right.left = TreeNode(5)
+
+res = inorder_traversal(n)
+print(res)
