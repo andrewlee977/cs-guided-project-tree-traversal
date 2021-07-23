@@ -27,14 +27,17 @@ def inorder_traversal(root):
     s = []
     result = []
     while True:
-      while root:
+      # while there is a root add it to `s` and keep traversing left
+      while root: 
         s.append(root)
         root = root.left
+      # when we've exhausted the entire tree, return `result`
       if len(s) == 0:
         return result
+      # once we've finished traversing left, grab the deepest node and add it's value to `result`
       node = s.pop()
       result.append(node.val)
-      
+      # traverse right from node you just added to `result`
       root = node.right
 
 n = TreeNode(3)

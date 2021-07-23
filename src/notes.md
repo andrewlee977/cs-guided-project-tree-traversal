@@ -16,9 +16,9 @@ Breadth-First (Queue - not recursive) - go down and exhaust by each
 
 
 DEPTH FIRST:
-1.) In Order DFT (3, 5, 10, 12)
-2.) Pre Order DFT (10, 5, 3, 12)
-3.) Post Order DFT (3, 5, 12, 10)
+1.) Pre Order DFT (10, 5, 3, 12) - (PRINT), LEFT, RIGHT
+2.) In Order DFT (3, 5, 10, 12) - LEFT, (PRINT), RIGHT
+3.) Post Order DFT (3, 5, 12, 10) - LEFT, RIGHT, (PRINT)
 
 
 
@@ -52,7 +52,7 @@ class BinarySearchTree:
                 # otherwise, repeat the process!
                 self.right.insert(value)
 
-    def pre_order_dft(self):
+    def pre_order_dft(self):`
         if self is None:
             return
         print(self.value)
